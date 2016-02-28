@@ -1,22 +1,54 @@
 #!/usr/bin/env bash
 
+pushd () {
+    command pushd "$@" > /dev/null
+}
+
+popd () {
+    command popd "$@" > /dev/null
+}
+
 force=0
-while getopts "f" opt; do
-    case '$opt' in
-        f) force=1
-           ;;
-    esac
+verbose=0
+dry=
+echo_when_verbose=true
+while getopts "fvd" opt; do
+	case $opt in
+		f) force=1
+      echo "Force mode, will override existing file"
+			;;
+		v) echo_when_verbose=echo
+			;;
+		d) dry=echo
+      echo "Dry run mode, print out commands only"
+			;;
+	esac
 done
 
-pushd home
-for fd in `ls -a`; do
-    if [ $fd != '.' ] && [ $fd != '..' ]; then
-        fd_path="`pwd`/$fd"
-        if (( force >= 0 )); then
-            ln -s -F $fd_path ~/
-        else
-            ln -s $fd_path ~/
-        fi
-    fi
-done
-popd
+log () {
+	$echo_when_verbose $1
+}
+
+deploy_to () {
+  log "deploy $1 to $2"
+  pushd $1
+  FILTER="sed -e s/^\.\///g" 	
+  for fd in `find . -not -path '.' -type d | $FILTER`; do
+    fd_path="`pwd`/$fd"
+		log "creating ~/$fd"
+    $dry mkdir -p ~/$fd
+  done
+  
+  for fd in `find . -type f | $FILTER`; do
+    fd_path="`pwd`/$fd"
+		log "linking $fd to ~/$fd"
+    if (( force > 0 )); then
+			$dry ln -s -F $fd_path ~/$fd
+		else
+			$dry ln -s $fd_path ~/$fd
+		fi
+  done
+  popd $1
+}
+
+deploy_to home ~/
