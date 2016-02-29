@@ -1,9 +1,32 @@
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(column-number-mode t)
+ '(custom-safe-themes
+   (quote
+    ("a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" default)))
+ '(js2-basic-offset 2 t)
+ '(js2-bounce-indent-p t t)
+ '(mac-option-modifier (quote (:ordinary meta :function alt :mouse alt)))
+ '(tool-bar-mode nil))
+(add-to-list 'default-frame-alist '(font . "Menlo") '(height . 140))
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+(setq vc-follow-symlinks t)
 (defun load-directory (directory)
   "Load recursively all `.el' files in DIRECTORY."
   (dolist (element (directory-files-and-attributes directory nil nil nil))
     (let* ((path (car element))
            (fullpath (concat directory "/" path))
-           (isdir (car (cdr element)))
+           (isdir (eq (car (cdr element)) t))
            (ignore-dir (or (string= path ".") (string= path ".."))))
       (cond
        ((and (eq isdir t) (not ignore-dir))
@@ -58,7 +81,34 @@
 
 (package-initialize)
 
-(setq package-list '(xterm-color multi-term))
+(setq package-list
+      '(xterm-color
+        auto-complete
+        ac-js2
+        base16-theme
+        benchmark-init
+        emmet-mode
+        evil
+        evil-leader
+        smartparens
+        multiple-cursors
+        fasd
+        helm
+        helm-projectile
+        js2-mode
+        ac-js2
+        magit
+        markdown-mode
+        powerline
+        powerline-evil
+        projectile
+        rainbow-delimiters
+        skewer-mode
+        slime
+        smart-mode-line
+        web-mode
+        xterm-color
+        multi-term))
 (mapc #'package-install package-list)
 
 (load-directory "~/.emacs.d/config")
