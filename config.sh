@@ -1,5 +1,5 @@
 config () {
-  scripts/$1.cfg.sh
+  scripts/$1.sh
 }
 
-config git
+config osx
