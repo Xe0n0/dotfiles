@@ -13,3 +13,11 @@
 
 ; ==== Chinese Configuration ====
 (set-fontset-font t 'han '("PingFang SC"))
+
+(set-face-attribute 'racket-selfeval-face nil
+                    :inherit font-lock-constant-face
+                    :foreground nil)
+
+(set-face-attribute 'racket-keyword-argument-face
+                    :inherit font-lock-keyword-face
+                    :foreground nil)
