@@ -236,6 +236,11 @@
   (interactive)
   (load-file "~/.emacs.d/init.el"))
 
+(defun close-all-buffers ()
+  (interactive)
+  (mapc 'kill-buffer (buffer-list)))
+
 ; (setq inhibit-splash-screen t)
 ; (switch-to-buffer "**")
 (put 'set-goal-column 'disabled nil)
+
