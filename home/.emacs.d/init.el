@@ -93,6 +93,7 @@
         smartparens
         multiple-cursors
         fasd
+        geiser ;; Scheme REPL
         helm
         helm-projectile
         js2-mode
@@ -102,6 +103,7 @@
         powerline
         powerline-evil
         projectile
+        racket-mode
         rainbow-delimiters
         skewer-mode
         slime
