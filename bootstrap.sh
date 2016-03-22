@@ -40,12 +40,12 @@ deploy_to () {
     log "creating ~/$fd"
     $dry mkdir -p ~/$fd
   done
-  
+
   for fd in `find . -type f | $FILTER`; do
     fd_path="`pwd`/$fd"
     log "linking $fd to ~/$fd"
     if (( force > 0 )); then
-      $dry ln -s -F $fd_path ~/$fd
+      $dry ln -s -f $fd_path ~/$fd
     else
       $dry ln -s $fd_path ~/$fd
     fi
