@@ -5,7 +5,7 @@ pushd () {
 }
 
 popd () {
-  command popd "$@" > /dev/null
+  command popd > /dev/null
 }
 
 force=0
@@ -50,7 +50,7 @@ deploy_to () {
       $dry ln -s $fd_path ~/$fd
     fi
   done
-  popd $1
+  popd
 }
 
 deploy_to home ~/
