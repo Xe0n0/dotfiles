@@ -3,7 +3,6 @@
 (global-set-key (kbd "C-c h") 'windmove-left)
 (global-set-key (kbd "C-c l") 'windmove-right)
 (global-set-key (kbd "C-c .") 'evil-mode)
-(global-set-key (kbd "C-z") 'shell)
 ;(add-hook 'eshell-mode-hook
 ;  (lambda ()
 ;    (local-set-key (kbd "C-z") 'bury-buffer)))
