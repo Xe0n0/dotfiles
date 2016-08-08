@@ -23,3 +23,16 @@
 
 
 ;;("quicklisp-slime-helper")
+
+(setq-default c-basic-offset 2
+            indent-tabs-mode nil)
+
+(setq c-default-style "linux"
+      c-basic-offset 2)
+
+;; fix Java mode offset
+(add-hook 'java-mode-hook (lambda ()
+                            (c-set-offset 'inexpr-class 0)
+                            (setq c-basic-offset 2
+                                  tab-width 2
+                                  indent-tabs-mode nil)))

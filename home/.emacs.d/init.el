@@ -87,6 +87,7 @@
         ac-js2
         base16-theme
         benchmark-init
+        column-enforce-mode
         emmet-mode
         evil
         evil-leader

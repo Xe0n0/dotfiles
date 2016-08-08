@@ -13,3 +13,4 @@
 (setq js2-basic-offset 2)  
 (setq js2-bounce-indent-p t) 
 (add-hook 'js2-mode-hook 'ac-js2-mode)
+(add-hook 'js2-mode-hook 'column-enforce-mode)

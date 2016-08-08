@@ -48,4 +48,4 @@ PROGRAMS can be a list of strings, or a single string."
             (tramp-set-method-parameter method 'tramp-copy-args (append copy-args newargs))))))
 (tramp-add-args
  '("scp" "scp1" "scp2" "scp1_old" "scp2_old" "sftp" "rsync" "ssh" "ssh1" "ssh2" "ssh1_old" "ssh2_old" "scpx" "sshx")
- '(("-o" "ControlPath=~/.ssh/sockets/emacs-master-%%r@%%h:%%p" "-o" "ControlMaster=auto" "-o" "ControlPersist=1200" "-o" "Ciphers=arcfour" "-o" "Compression=yes" "-o" "StrictHostKeyChecking=no")))
+ '(("-o" "ControlPath=~/.ssh/sockets/shared-%%r@%%h:%%p" "-o" "ControlMaster=auto" "-o" "ControlPersist=1200" "-o" "Ciphers=arcfour" "-o" "Compression=yes" "-o" "StrictHostKeyChecking=no")))
