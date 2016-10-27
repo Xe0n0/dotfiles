@@ -90,6 +90,7 @@
         emmet-mode
         evil
         evil-leader
+        evil-mc
         smartparens
         multiple-cursors
         fasd
@@ -191,6 +192,9 @@
   (add-hook 'multiple-cursors-mode-enabled-hook 'evil-emacs-state)
   (add-hook 'multiple-cursors-mode-disabled-hook 'evil-normal-state))
 
+(require 'evil-mc)
+(global-evil-mc-mode 1)
+
 ;; ==== MAGIT ====
 (require 'magit)
 
@@ -245,4 +249,3 @@
 ; (setq inhibit-splash-screen t)
 ; (switch-to-buffer "**")
 (put 'set-goal-column 'disabled nil)
-

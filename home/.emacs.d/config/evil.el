@@ -5,6 +5,7 @@
 (setq evil-want-C-i-jump nil)   ; don't bind [tab] to evil-jump-forward
 (require 'evil-leader)
 (require 'evil)
+
 (setq evil-leader/in-all-states 1)
 (evil-leader/set-leader ",")
 (evil-leader/set-key
@@ -78,3 +79,4 @@
 (define-key evil-normal-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
 (define-key evil-motion-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
 (define-key evil-motion-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
+

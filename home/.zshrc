@@ -64,6 +64,7 @@ alias c=cd
 alias vi=vim
 alias py=python
 alias e=emacs
+alias r=racket
 
 if [[ -e ~/.zshrc.local ]]; then
   source ~/.zshrc.local
