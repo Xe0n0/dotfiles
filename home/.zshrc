@@ -25,6 +25,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-eighties.dark.sh"
 
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/homebrew/bin:$PATH
+export PATH=/usr/local/bin:$PATH
 
 if [[ "$(uname)" == "Darwin" ]]; then
   plugins=(git brew ruby npm bower gem coffee bundler rails fasd sudo extract node history-substring-search zsh-syntax-highlighting)

@@ -62,10 +62,11 @@
 ;; C-p to open helm-projectile
 (global-set-key (kbd "C-c C-p") 'helm-projectile)
 (define-key evil-normal-state-map (kbd "C-c C-p") 'helm-projectile)
-;; Map ESC to close helm-projectile in GUI, seems not work in terminal ;(
-; (defun my-helm-init ()
-;   (define-key helm-map [escape] 'helm-keyboard-quit)
-;   (define-key helm-map "\e" 'helm-keyboard-quit)
-; )
+;Map ESC to close helm-projectile in GUI, seems not work in terminal ;(
+(defun my-helm-init ()
+  (define-key helm-map [escape] 'helm-keyboard-quit)
+  (define-key helm-map (kbd "M-b") 'backward-word)
+  (define-key helm-map (kbd "M-f") 'forward-word)
+)
 
-; (add-hook 'after-init-hook 'my-helm-init)
+(add-hook 'after-init-hook 'my-helm-init)

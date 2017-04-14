@@ -3,6 +3,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+
  '(column-number-mode t)
  '(custom-safe-themes
    (quote
@@ -10,6 +11,9 @@
  '(js2-basic-offset 2 t)
  '(js2-bounce-indent-p t t)
  '(mac-option-modifier (quote (:ordinary meta :function alt :mouse alt)))
+ '(package-selected-packages
+   (quote
+    (smart-mode-line skewer-mode projectile powerline js2-mode helm geiser smartparens evil auto-complete xterm-color web-mode w3m w3 solarized-theme smart-mode-line-powerline-theme slime rainbow-delimiters racket-mode powerline-evil multiple-cursors multi-term markdown-mode magit helm-projectile fasd evil-smartparens evil-leader emmet-mode dtrt-indent dokuwiki-mode column-enforce-mode color-theme cloc benchmark-init base16-theme angularjs-mode airline-themes ac-js2 ac-geiser 2048-game)))
  '(tool-bar-mode nil))
 (add-to-list 'default-frame-alist '(font . "Menlo") '(height . 140))
 
@@ -85,6 +89,7 @@
       '(xterm-color
         auto-complete
         ac-js2
+        cloc
         base16-theme
         benchmark-init
         column-enforce-mode
@@ -112,7 +117,9 @@
         smart-mode-line
         web-mode
         xterm-color
-        multi-term))
+        multi-term
+        w3m
+        ))
 (mapc #'package-install package-list)
 
 (load-directory "~/.emacs.d/config")
@@ -191,7 +198,8 @@
 (global-set-key (kbd "C-S-D") 'mc/mark-sgml-tag-pair)
 (after 'evil
   (add-hook 'multiple-cursors-mode-enabled-hook 'evil-emacs-state)
-  (add-hook 'multiple-cursors-mode-disabled-hook 'evil-normal-state))
+;  (add-hook 'multiple-cursors-mode-disabled-hook 'evil-normal-state)
+  )
 
 (require 'evil-mc)
 (global-evil-mc-mode 1)
