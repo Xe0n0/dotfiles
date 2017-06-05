@@ -119,6 +119,8 @@
         xterm-color
         multi-term
         w3m
+        protobuf-mode
+        modern-cpp-font-lock
         ))
 (mapc #'package-install package-list)
 
