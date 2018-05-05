@@ -121,6 +121,8 @@
         w3m
         protobuf-mode
         modern-cpp-font-lock
+        go-mode
+        golint
         ))
 (mapc #'package-install package-list)
 

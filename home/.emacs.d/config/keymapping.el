@@ -9,6 +9,7 @@
 (setq mac-command-modifier 'super)
 (define-key key-translation-map (kbd "s-x") (kbd "M-x"))
 (define-key key-translation-map (kbd "s-p") (kbd "C-c C-p"))
+(define-key key-translation-map (kbd "s-y") (kbd "C-x c M-y"))
 (define-key key-translation-map (kbd "s-r") (kbd "C-x C-r"))
 (define-key key-translation-map (kbd "s-w") (kbd "C-g"))
 (define-key key-translation-map (kbd "s-b") (kbd "C-x C-b"))

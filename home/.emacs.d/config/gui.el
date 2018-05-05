@@ -6,7 +6,7 @@
 (add-to-list 'default-frame-alist '(font . "Menlo-13") '(height . 140))
 (add-to-list 'initial-frame-alist '(font . "Menlo-13") '(height . 140))
 
-(set-default-font "Menlo-14")
+(set-default-font "Menlo-13")
 
 
 (put 'erase-buffer 'disabled nil)
@@ -22,8 +22,8 @@
         (if (or
              (> (frame-pixel-height) 2000)
              (> (frame-pixel-width) 2000))
-            (set-frame-parameter target 'font "Menlo 15")
-          (set-frame-parameter target 'font "Menlo 14")))))
+            (set-frame-parameter target 'font "Menlo 14")
+          (set-frame-parameter target 'font "Menlo 13")))))
 ;;; Fontify current frame (so that it happens on startup; may be unnecessary if you use focus-in-hook)
 (fontify-frame)
 ;;; Only in Emacs 24.4 (currently available as a pretest)
