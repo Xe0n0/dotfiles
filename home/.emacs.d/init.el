@@ -1,19 +1,19 @@
+(set-keyboard-coding-system nil)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
-
  '(column-number-mode t)
  '(custom-safe-themes
    (quote
     ("a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" default)))
  '(js2-basic-offset 2 t)
  '(js2-bounce-indent-p t t)
- '(mac-option-modifier (quote (:ordinary meta :function alt :mouse alt)))
  '(package-selected-packages
    (quote
-    (smart-mode-line skewer-mode projectile powerline js2-mode helm geiser smartparens evil auto-complete xterm-color web-mode w3m w3 solarized-theme smart-mode-line-powerline-theme slime rainbow-delimiters racket-mode powerline-evil multiple-cursors multi-term markdown-mode magit helm-projectile fasd evil-smartparens evil-leader emmet-mode dtrt-indent dokuwiki-mode column-enforce-mode color-theme cloc benchmark-init base16-theme angularjs-mode airline-themes ac-js2 ac-geiser 2048-game)))
+    (golint go-mode modern-cpp-font-lock protobuf-mode evil-mc smart-mode-line skewer-mode projectile powerline js2-mode helm geiser smartparens evil auto-complete xterm-color web-mode w3m w3 solarized-theme smart-mode-line-powerline-theme slime rainbow-delimiters racket-mode powerline-evil multiple-cursors multi-term markdown-mode magit helm-projectile fasd evil-smartparens evil-leader emmet-mode dtrt-indent dokuwiki-mode column-enforce-mode color-theme cloc benchmark-init base16-theme angularjs-mode airline-themes ac-js2 ac-geiser 2048-game)))
  '(tool-bar-mode nil))
 (add-to-list 'default-frame-alist '(font . "Menlo") '(height . 140))
 
