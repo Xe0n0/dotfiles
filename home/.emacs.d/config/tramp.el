@@ -1,18 +1,21 @@
 (require 'tramp)
 (require 'cl)
-;(setq tramp-verbose 10)
-(setq tramp-default-method "/usr/local/bin/ssh")
+;; (setq tramp-verbose 10)
+
+(setq tramp-default-method "ssh")
 (setq tramp-use-ssh-controlmaster-options nil)
-      ;(concat
-      ; "-o ControlPath='~/.ssh/sockets/emacs.%%r@%%h:%%p' "
-      ; "-o ControlMaster=auto -o ControlPersist=yes "))
-(defun tramp-get-method-parameter (method param)
+;; (setq tramp-ssh-controlmaster-options
+;;        (concat
+;;         "-o ControlPath='~/.ssh/sockets/shared-%%r@%%h:%%p' "
+;;         "-o ControlMaster=auto -o ControlPersist=yes "))
+
+(defun wu/tramp-get-method-parameter (method param)
   "Return the method parameter PARAM.
 If the `tramp-methods' entry does not exist, return NIL."
   (let ((entry (assoc param (assoc method tramp-methods))))
     (when entry (cadr entry))))
 
-(defun tramp-set-method-parameter (method param newvalue)
+(defun wu/tramp-set-method-parameter (method param newvalue)
   "Set the method paramter PARAM to VALUE for METHOD.
 
 If METHOD does not yet have PARAM, add it.
@@ -24,7 +27,7 @@ If METHOD does not exist, do nothing."
             (setcar (cdr entry) newvalue)
           (setcdr (last method-params) '(param newvalue)))))))
 
-(defun tramp-add-args (programs newargs)
+(defun wu/tramp-add-args (programs newargs)
   "Append NEWARGS to the argument list for any of PROGRAMS in `tramp-methods'.
 
 PROGRAMS can be a list of strings, or a single string."
@@ -46,6 +49,6 @@ PROGRAMS can be a list of strings, or a single string."
           (when (find copy-program programs :test 'string=)
             (message "    Adding to copy program %s" copy-program)
             (tramp-set-method-parameter method 'tramp-copy-args (append copy-args newargs))))))
-(tramp-add-args
- '("scp" "scp1" "scp2" "scp1_old" "scp2_old" "sftp" "rsync" "ssh" "ssh1" "ssh2" "ssh1_old" "ssh2_old" "scpx" "sshx")
- '(("-o" "ControlPath=~/.ssh/sockets/shared-%%r@%%h:%%p" "-o" "ControlMaster=auto" "-o" "Cipher=aes128-gcm@openssh.com" "-o" "ControlPersist=12000" "-o" "Compression=yes" "-o" "StrictHostKeyChecking=no")))
+;; (tramp-add-args
+;;  '("scp" "scp1" "scp2" "scp1_old" "scp2_old" "sftp" "rsync" "ssh" "ssh1" "ssh2" "ssh1_old" "ssh2_old" "scpx" "sshx")
+;;  '(("-o" "ControlPath=~/.ssh/sockets/shared-%%r@%%h:%%p" "-o" "ControlMaster=auto" "-o" "Cipher=aes128-gcm@openssh.com" "-o" "ControlPersist=12000" "-o" "Compression=yes" "-o" "StrictHostKeyChecking=no")))
