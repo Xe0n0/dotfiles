@@ -10,167 +10,251 @@
           },
           "to": [
             {
-              "key_code": "right_option"
+              "set_variable": {
+                "name": "numeric_keypad_mode",
+                "value": 1
+              }
+            },
+            {
+              "key_code": "out"
+            }
+          ],
+          "to_after_key_up": [
+            {
+              "set_variable": {
+                "name": "numeric_keypad_mode",
+                "value": 0
+              }
             }
           ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "1",
-            "modifiers": {
-              "mandatory": [
-                "right_option"
-              ]
+            "key_code": "right_option"
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "numeric_keypad_mode",
+                "value": 1
+              }
+            },
+            {
+              "key_code": "out"
             }
+          ],
+          "to_after_key_up": [
+            {
+              "set_variable": {
+                "name": "numeric_keypad_mode",
+                "value": 0
+              }
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "from": {
+            "key_code": "right_command"
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "numeric_keypad_mode",
+                "value": 1
+              }
+            },
+            {
+              "key_code": "out"
+            }
+          ],
+          "to_after_key_up": [
+            {
+              "set_variable": {
+                "name": "numeric_keypad_mode",
+                "value": 0
+              }
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "from": {
+            "key_code": "1"
           },
           "to": [
             {
               "key_code": "1"
             }
           ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "numeric_keypad_mode",
+              "value": 1
+            }
+          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "2",
-            "modifiers": {
-              "mandatory": [
-                "right_option"
-              ]
-            }
+            "key_code": "2"
           },
           "to": [
             {
               "key_code": "2"
             }
           ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "numeric_keypad_mode",
+              "value": 1
+            }
+          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "3",
-            "modifiers": {
-              "mandatory": [
-                "right_option"
-              ]
-            }
+            "key_code": "3"
           },
           "to": [
             {
               "key_code": "3"
             }
           ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "numeric_keypad_mode",
+              "value": 1
+            }
+          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "q",
-            "modifiers": {
-              "mandatory": [
-                "right_option"
-              ]
-            }
+            "key_code": "q"
           },
           "to": [
             {
               "key_code": "4"
             }
           ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "numeric_keypad_mode",
+              "value": 1
+            }
+          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "w",
-            "modifiers": {
-              "mandatory": [
-                "right_option"
-              ]
-            }
+            "key_code": "w"
           },
           "to": [
             {
               "key_code": "5"
             }
           ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "numeric_keypad_mode",
+              "value": 1
+            }
+          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "e",
-            "modifiers": {
-              "mandatory": [
-                "right_option"
-              ]
-            }
+            "key_code": "e"
           },
           "to": [
             {
               "key_code": "6"
             }
           ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "numeric_keypad_mode",
+              "value": 1
+            }
+          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "a",
-            "modifiers": {
-              "mandatory": [
-                "right_option"
-              ]
-            }
+            "key_code": "a"
           },
           "to": [
             {
               "key_code": "7"
             }
           ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "numeric_keypad_mode",
+              "value": 1
+            }
+          ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "s",
-            "modifiers": {
-              "mandatory": [
-                "right_option"
-              ]
-            }
+            "key_code": "s"
           },
           "to": [
             {
               "key_code": "8"
             }
           ],
-          "type": "basic"
-        },
-        {
-          "from": {
-            "key_code": "d",
-            "modifiers": {
-              "mandatory": [
-                "right_option"
-              ]
-            }
-          },
-          "to": [
+          "conditions": [
             {
-              "key_code": "9"
+              "type": "variable_if",
+              "name": "numeric_keypad_mode",
+              "value": 1
             }
           ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "x",
-            "modifiers": {
-              "mandatory": [
-                "right_option"
-              ]
+            "key_code": "d"
+          },
+          "to": [
+            {
+              "key_code": "9"
             }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "numeric_keypad_mode",
+              "value": 1
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "from": {
+            "key_code": "x"
           },
           "to": [
             {
               "key_code": "0"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "numeric_keypad_mode",
+              "value": 1
             }
           ],
           "type": "basic"

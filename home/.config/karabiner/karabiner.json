@@ -4441,12 +4441,6 @@
                 }
             ],
             "name": "Colemak",
-            "one_to_many_mappings": {
-                "6": [
-                    "right_shift",
-                    "6"
-                ]
-            },
             "selected": true,
             "simple_modifications": [],
             "virtual_hid_keyboard": {
