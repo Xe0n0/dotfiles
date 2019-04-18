@@ -2,11 +2,15 @@
 
 ; ==== GUI Configuration ====
 (scroll-bar-mode -1)
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
-(add-to-list 'default-frame-alist '(font . "Menlo-13") '(height . 140))
-(add-to-list 'initial-frame-alist '(font . "Menlo-13") '(height . 140))
 
-(set-default-font "Menlo-13")
+(if (eq system-type 'darwin)
+  ; something for OS X if true
+  ; optional something if not
+  (add-to-list 'default-frame-alist '(fullscreen . maximized))
+  (add-to-list 'default-frame-alist '(font . "Menlo-13") '(height . 140))
+  (add-to-list 'initial-frame-alist '(font . "Menlo-13") '(height . 140))
+  (set-default-font "Menlo-13")
+)
 
 
 (put 'erase-buffer 'disabled nil)
@@ -25,7 +29,9 @@
             (set-frame-parameter target 'font "Menlo 14")
           (set-frame-parameter target 'font "Menlo 13")))))
 ;;; Fontify current frame (so that it happens on startup; may be unnecessary if you use focus-in-hook)
-(fontify-frame)
+(if (eq system-type 'darwin)
+  (fontify-frame)
+)
 ;;; Only in Emacs 24.4 (currently available as a pretest)
 ; see http://emacsredux.com/blog/2014/03/22/a-peek-at-emacs-24-dot-4-focus-hooks/
 ;; (add-hook 'focus-in-hook fontify-frame)
