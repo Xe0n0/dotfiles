@@ -15,7 +15,6 @@
    (quote
     (ncl-mode google-c-style jinja2-mode protobuf-mode golint go-mode modern-cpp-font-lock evil-mc smart-mode-line skewer-mode projectile powerline js2-mode helm geiser smartparens evil auto-complete xterm-color web-mode w3m w3 solarized-theme smart-mode-line-powerline-theme slime rainbow-delimiters racket-mode powerline-evil multiple-cursors multi-term markdown-mode magit helm-projectile fasd evil-smartparens evil-leader emmet-mode dtrt-indent dokuwiki-mode column-enforce-mode color-theme cloc benchmark-init base16-theme angularjs-mode airline-themes ac-js2 ac-geiser 2048-game)))
  '(tool-bar-mode nil))
-(add-to-list 'default-frame-alist '(font . "Menlo") '(height . 140))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
