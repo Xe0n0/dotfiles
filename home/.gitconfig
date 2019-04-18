@@ -62,3 +62,5 @@
 	token = !security find-internet-password -a Xe0n0 -s github.com -l 'ghi token' -w
 [pull]
 	rebase = true
+[http]
+	cookiefile = /Users/wuhaotian/.gitcookies

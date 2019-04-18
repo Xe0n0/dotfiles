@@ -15,6 +15,7 @@ fi
 # User configuration
 
 export PATH="/usr/local/sbin:/Users/wuhaotian/bin:$PATH:/usr/local/share/npm/bin"
+export PATH=$PATH:/Users/wuhaotian/go/bin
 export NVM_DIR=~/.nvm
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
@@ -26,6 +27,8 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-eighties.dark.sh"
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/homebrew/bin:$PATH
 export PATH=/usr/local/bin:$PATH
+USER_BASE_PATH=$(python -m site --user-base)
+export PATH=$PATH:$USER_BASE_PATH/bin
 
 if [[ "$(uname)" == "Darwin" ]]; then
   plugins=(git brew ruby npm bower gem coffee bundler rails fasd sudo extract node history-substring-search zsh-syntax-highlighting)
@@ -70,3 +73,4 @@ alias r=racket
 if [[ -e ~/.zshrc.local ]]; then
   source ~/.zshrc.local
 fi
+export PATH="/Users/wuhaotian/homebrew/opt/mysql@5.7/bin:$PATH"

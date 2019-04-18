@@ -36,3 +36,6 @@
                             (setq c-basic-offset 2
                                   tab-width 2
                                   indent-tabs-mode nil)))
+
+;; Set google c/c++ style
+(add-hook 'c-mode-common-hook 'google-set-c-style)

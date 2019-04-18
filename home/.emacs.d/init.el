@@ -13,7 +13,7 @@
  '(js2-bounce-indent-p t t)
  '(package-selected-packages
    (quote
-    (protobuf-mode golint go-mode modern-cpp-font-lock evil-mc smart-mode-line skewer-mode projectile powerline js2-mode helm geiser smartparens evil auto-complete xterm-color web-mode w3m w3 solarized-theme smart-mode-line-powerline-theme slime rainbow-delimiters racket-mode powerline-evil multiple-cursors multi-term markdown-mode magit helm-projectile fasd evil-smartparens evil-leader emmet-mode dtrt-indent dokuwiki-mode column-enforce-mode color-theme cloc benchmark-init base16-theme angularjs-mode airline-themes ac-js2 ac-geiser 2048-game)))
+    (ncl-mode google-c-style jinja2-mode protobuf-mode golint go-mode modern-cpp-font-lock evil-mc smart-mode-line skewer-mode projectile powerline js2-mode helm geiser smartparens evil auto-complete xterm-color web-mode w3m w3 solarized-theme smart-mode-line-powerline-theme slime rainbow-delimiters racket-mode powerline-evil multiple-cursors multi-term markdown-mode magit helm-projectile fasd evil-smartparens evil-leader emmet-mode dtrt-indent dokuwiki-mode column-enforce-mode color-theme cloc benchmark-init base16-theme angularjs-mode airline-themes ac-js2 ac-geiser 2048-game)))
  '(tool-bar-mode nil))
 (add-to-list 'default-frame-alist '(font . "Menlo") '(height . 140))
 
@@ -88,6 +88,7 @@
 (setq package-list
       '(xterm-color
         auto-complete
+        jinja2-mode
         ac-js2
         cloc
         base16-theme
@@ -99,6 +100,7 @@
         evil-mc
         smartparens
         multiple-cursors
+        google-c-style
         fasd
         geiser ;; Scheme REPL
         helm
@@ -106,6 +108,7 @@
         js2-mode
         ac-js2
         magit
+        ncl-mode
         markdown-mode
         powerline
         powerline-evil
@@ -118,11 +121,11 @@
         web-mode
         xterm-color
         multi-term
-        w3m
         protobuf-mode
         modern-cpp-font-lock
         go-mode
         golint
+        f
         ))
 (mapc #'package-install package-list)
 
@@ -262,3 +265,7 @@
 ; (setq inhibit-splash-screen t)
 ; (switch-to-buffer "**")
 (put 'set-goal-column 'disabled nil)
+
+(run-at-time nil (* 5 60) 'recentf-save-list)
+
+(load-file "~/.emacs.local")
