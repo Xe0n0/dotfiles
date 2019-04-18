@@ -61,6 +61,7 @@
 [pull]
 	rebase = true
 [http]
-	cookiefile = /Users/wuhaotian/.gitcookies
+	cookiefile = ~/.gitcookies
 [credential]
 	helper = corpsso
+
