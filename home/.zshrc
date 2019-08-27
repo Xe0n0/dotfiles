@@ -31,7 +31,7 @@ USER_BASE_PATH=$(python -m site --user-base)
 export PATH=$PATH:$USER_BASE_PATH/bin
 
 if [[ "$(uname)" == "Darwin" ]]; then
-  plugins=(git brew ruby npm bower gem coffee bundler rails fasd sudo extract node history-substring-search zsh-syntax-highlighting)
+  plugins=(git brew ruby npm bower gem coffee bundler rails fasd sudo extract node history-substring-search)
   eval "$(fasd --init posix-alias zsh-hook zsh-wcomp zsh-wcomp-install)"
   # fasd_cache="$HOME/.fasd-init"
   # if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
@@ -54,7 +54,7 @@ else
   alias sf='fasd -sif'     # interactive file selection
   alias z='fasd_cd -d'     # cd, same functionality as j in autojump
   alias zz='fasd_cd -d -i' # cd with interactive selection
-  plugins=(git fasd  history-substring-search zsh-syntax-highlighting)
+  plugins=(git fasd history-substring-search mercurial-prompt)
   #ufasd setup
   eval "$(fasd --init auto)"
   # eval "$(fasd --init posix-alias zsh-hook zsh-ccomp)"
@@ -71,7 +71,15 @@ alias py=python
 alias e=emacs
 alias r=racket
 
+# hg theme config
+PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c%{$fg_bold[blue]%}$(git_prompt_info)$(hg_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
+#ZSH_THEME_HG_PROMPT_PREFIX=" %{$fg_bold[magenta]%}hg:(%{$fg[red]%}"
+#ZSH_THEME_HG_PROMPT_SUFFIX="%{$reset_color%}"
+ZSH_THEME_HG_PROMPT_DIRTY=" %{$fg[yellow]%}✗%{$reset_color%}"
+ZSH_THEME_HG_PROMPT_CLEAN=""
+
 if [[ -e ~/.zshrc.local ]]; then
   source ~/.zshrc.local
 fi
 export PATH="/Users/wuhaotian/homebrew/opt/mysql@5.7/bin:$PATH"
+
