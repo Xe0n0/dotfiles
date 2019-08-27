@@ -1,9 +1,20 @@
 (require 'tramp)
 (require 'cl)
-;; (setq tramp-verbose 10)
+(setq projectile-mode-line "Projectile")
+(setq remote-file-name-inhibit-cache nil)
+(setq vc-ignore-dir-regexp
+      (format "%s\\|%s"
+                    vc-ignore-dir-regexp
+                    tramp-file-name-regexp))
+;; (setq tramp-verbose 1)
+
 
 (setq tramp-default-method "ssh")
 (setq tramp-use-ssh-controlmaster-options nil)
+(setq tramp-inline-compress-start-size 1)
+(setq tramp-copy-size-limit 1000000)
+(add-to-list 'backup-directory-alist
+    (cons tramp-file-name-regexp nil))
 ;; (setq tramp-ssh-controlmaster-options
 ;;        (concat
 ;;         "-o ControlPath='~/.ssh/sockets/shared-%%r@%%h:%%p' "

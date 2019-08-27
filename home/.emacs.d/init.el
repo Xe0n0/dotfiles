@@ -13,7 +13,7 @@
  '(js2-bounce-indent-p t t)
  '(package-selected-packages
    (quote
-    (ncl-mode google-c-style jinja2-mode protobuf-mode golint go-mode modern-cpp-font-lock evil-mc smart-mode-line skewer-mode projectile powerline js2-mode helm geiser smartparens evil auto-complete xterm-color web-mode w3m w3 solarized-theme smart-mode-line-powerline-theme slime rainbow-delimiters racket-mode powerline-evil multiple-cursors multi-term markdown-mode magit helm-projectile fasd evil-smartparens evil-leader emmet-mode dtrt-indent dokuwiki-mode column-enforce-mode color-theme cloc benchmark-init base16-theme angularjs-mode airline-themes ac-js2 ac-geiser 2048-game)))
+    (skewer-mode projectile powerline js2-mode helm evil xterm-color web-mode w3m smartparens smart-mode-line slime rainbow-delimiters racket-mode protobuf-mode powerline-evil ncl-mode multiple-cursors multi-term modern-cpp-font-lock markdown-mode magit jinja2-mode helm-projectile google-c-style golint go-mode geiser fasd f evil-mc evil-leader emmet-mode company column-enforce-mode cloc benchmark-init base16-theme auto-complete ac-js2)))
  '(tool-bar-mode nil))
 
 (custom-set-faces
@@ -64,6 +64,8 @@
       `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
+(add-to-list 'backup-directory-alist
+                  (cons tramp-file-name-regexp nil))
 
 ;; ==== COMMON SETUP ====
 (setq css-indent-offset 2)
@@ -86,7 +88,6 @@
 
 (setq package-list
       '(xterm-color
-        auto-complete
         jinja2-mode
         ac-js2
         cloc
@@ -125,6 +126,7 @@
         go-mode
         golint
         f
+        company
         ))
 (mapc #'package-install package-list)
 
@@ -267,4 +269,4 @@
 
 (run-at-time nil (* 5 60) 'recentf-save-list)
 
-(load-file "~/.emacs.local")
+(load-file "~/.emacs.local.el")

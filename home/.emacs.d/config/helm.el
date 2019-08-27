@@ -49,6 +49,9 @@
 (require 'helm-projectile)
 (setq projectile-enable-caching t)
 (projectile-global-mode)
+;; default projectile-hg-command "hg locate -f -0 -I ." returns full path which doesn't work
+;; for tramp.
+(setq projectile-hg-command "hg locate -0 -I .")
 (setq projectile-completion-system 'helm)
 (with-eval-after-load 'helm-projectile
   (defvar helm-source-file-not-found

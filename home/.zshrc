@@ -63,6 +63,7 @@ fi
 
 bindkey '^P' history-substring-search-up
 bindkey '^N' history-substring-search-down
+bindkey \^U backward-kill-line
 
 alias c=cd
 alias vi=vim

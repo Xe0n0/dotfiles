@@ -1,4 +1,6 @@
 (require 'slime)
+(add-hook 'after-init-hook 'global-company-mode)
+
 (setq scheme-program-name 'racket)
 (add-to-list 'auto-mode-alist '("\\.rkt\\'" . racket-mode))
 (add-hook 'racket-mode-hook
