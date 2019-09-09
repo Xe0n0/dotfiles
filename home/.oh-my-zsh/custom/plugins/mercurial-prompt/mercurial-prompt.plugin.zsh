@@ -74,14 +74,21 @@ fi
 
 function hg_status_info() {
     if [[ -n $HG_ROOT ]]; then
-        local output=$(hg parent --template "{tags};{clnumber};{clid};{p4head}" 2> /dev/null)
+        local output=$(hg parent --template "{tags};{clnumber};{clid};{p4head};{bookmarks}" 2> /dev/null)
 	IFS=';' read -A items <<< "$output"
 	local result="$ZSH_THEME_HG_PROMPT_PREFIX$(hg_branch)"
 	# adding branch info
-        if [[ -z $items[1] ]]; then
-	  result="$result/$items[4]"
-        else
+        if [[ ! -z $items[5] ]]; then
+	  # branch/bookmark
+	  result="$result/$items[5]"
+        elif [[ ! -z $items[1] ]]; then
+	  # branch/tag
 	  result="$result/$items[1]"
+	elif [[ ! -z $items[4] ]]; then
+	  # branch/p4head
+	  result="$result/$items[4]"
+	else
+	  result="$result"
         fi
 	# adding cl info
 	if [[ ! -z $items[2] ]]; then
@@ -90,6 +97,7 @@ function hg_status_info() {
 	echo $result
     fi
 }
+
 function hg_branch() {
     if [[ -n $HG_ROOT ]]; then
         local branch=$(cat "$HG_ROOT/.hg/branch" 2> /dev/null)
