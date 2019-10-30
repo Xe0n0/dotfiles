@@ -81,12 +81,12 @@ function hg_status_info() {
         if [[ ! -z $items[5] ]]; then
 	  # branch/bookmark
 	  result="$result/$items[5]"
-        elif [[ ! -z $items[1] ]]; then
-	  # branch/tag
-	  result="$result/$items[1]"
 	elif [[ ! -z $items[4] ]]; then
 	  # branch/p4head
 	  result="$result/$items[4]"
+        elif [[ ! -z $items[1] ]]; then
+	  # branch/tag
+	  result="$result/$items[1]"
 	else
 	  result="$result"
         fi
