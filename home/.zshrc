@@ -29,6 +29,9 @@ export PATH=$HOME/homebrew/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 USER_BASE_PATH=$(python -m site --user-base)
 export PATH=$PATH:$USER_BASE_PATH/bin
+export PATH=$PATH:$(go env GOPATH)/bin
+export GOPATH=$(go env GOPATH)
+export PATH=$PATH:/usr/local/kubebuilder/bin
 
 if [[ "$(uname)" == "Darwin" ]]; then
   plugins=(git brew ruby npm bower gem coffee bundler rails fasd sudo extract node history-substring-search)
@@ -70,6 +73,7 @@ alias vi=vim
 alias py=python
 alias e=emacs
 alias r=racket
+alias tt=tmx2
 
 # hg theme config
 PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c%{$fg_bold[blue]%}$(git_prompt_info)$(hg_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
