@@ -14,6 +14,8 @@ fi
 
 # User configuration
 
+alias python=python3
+
 export PATH="/usr/local/sbin:/Users/wuhaotian/bin:$PATH:/usr/local/share/npm/bin"
 export PATH=$PATH:/Users/wuhaotian/go/bin
 export NVM_DIR=~/.nvm
@@ -26,12 +28,14 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-eighties.dark.sh"
 
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/homebrew/bin:$PATH
+export PATH=/opt/homebrew/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 USER_BASE_PATH=$(python -m site --user-base)
 export PATH=$PATH:$USER_BASE_PATH/bin
 export PATH=$PATH:$(go env GOPATH)/bin
 export GOPATH=$(go env GOPATH)
 export PATH=$PATH:/usr/local/kubebuilder/bin
+export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin":$PATH
 
 if [[ "$(uname)" == "Darwin" ]]; then
   plugins=(git brew ruby npm bower gem coffee bundler rails fasd sudo extract node history-substring-search)
@@ -74,16 +78,41 @@ alias py=python
 alias e=emacs
 alias r=racket
 alias tt=tmx2
+alias pp=proxychains4
 
 # hg theme config
-PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c%{$fg_bold[blue]%}$(git_prompt_info)$(hg_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
+#PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c%{$fg_bold[blue]%}$(git_prompt_info)$(hg_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 #ZSH_THEME_HG_PROMPT_PREFIX=" %{$fg_bold[magenta]%}hg:(%{$fg[red]%}"
 #ZSH_THEME_HG_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_HG_PROMPT_DIRTY=" %{$fg[yellow]%}✗%{$reset_color%}"
-ZSH_THEME_HG_PROMPT_CLEAN=""
+#ZSH_THEME_HG_PROMPT_DIRTY=" %{$fg[yellow]%}✗%{$reset_color%}"
+#ZSH_THEME_HG_PROMPT_CLEAN=""
 
 if [[ -e ~/.zshrc.local ]]; then
   source ~/.zshrc.local
 fi
 export PATH="/Users/wuhaotian/homebrew/opt/mysql@5.7/bin:$PATH"
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+export PATH="/opt/homebrew/opt/qt@5/bin:$PATH"
+
+## QT5
+export LDFLAGS="-L/opt/homebrew/opt/qt@5/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/qt@5/include"
+
+export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/wuhaotian/Developer/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/wuhaotian/Developer/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/wuhaotian/Developer/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/wuhaotian/Developer/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+
+export PATH="/Users/wuhaotian/bin:$PATH"
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+
+
+# Created by `pipx` on 2025-03-27 09:30:11
+export PATH="$PATH:/Users/wuhaotian/.local/bin"
